@@ -15,4 +15,14 @@ class Product extends Model
         'price',
         'qty'
     ];
+
+    public function components()
+    {
+        return $this->hasMany(Bom::class, 'parent_product_id');
+    }
+
+    public function parentOf()
+    {
+        return $this->hasMany(Bom::class, 'component_product_id');
+    }
 }
