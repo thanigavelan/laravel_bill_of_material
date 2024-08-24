@@ -13,4 +13,14 @@ class Bom extends Model
         'component_product_id',
         'qty'
     ];
+
+    public function parentProduct()
+    {
+        return $this->belongsTo(Product::class, 'parent_product_id');
+    }
+
+    public function componentProduct()
+    {
+        return $this->belongsTo(Product::class, 'component_product_id');
+    }
 }
