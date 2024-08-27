@@ -8,5 +8,5 @@ Forget Password
 
 @section('content')
 
-
+home
 @endsection
