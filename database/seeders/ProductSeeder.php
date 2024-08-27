@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\product;
+
 class ProductSeeder extends Seeder
 {
     /**
@@ -22,7 +24,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Main ingredient for making laddus',
                 'sku' => 'INGR_GRAM_FLOUR', 
                 'price' => 50.00, 
-                'quantity' => 100
+                'qty' => 100
             ],
 
             [
@@ -30,14 +32,14 @@ class ProductSeeder extends Seeder
                 'description' => 'Clarified butter for binding and flavor', 
                 'sku' => 'INGR_GHEE', 
                 'price' => 100.00, 
-                'quantity' => 50],
+                'qty' => 50],
 
             [
                 'name' => 'Sugar', 
                 'description' => 'Sweetener for laddus', 
                 'sku' => 'INGR_SUGAR', 
                 'price' => 30.00, 
-                'quantity' => 200
+                'qty' => 200
             ],
 
             [
@@ -45,7 +47,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Spice for flavoring', 
                 'sku' => 'INGR_CARDAMOM', 
                 'price' => 10.00, 
-                'quantity' => 500
+                'qty' => 500
             ],
 
             [
@@ -53,7 +55,7 @@ class ProductSeeder extends Seeder
                 'description' => 'For garnishing and extra flavor', 
                 'sku' => 'INGR_NUTS', 
                 'price' => 200.00, 
-                'quantity' => 300
+                'qty' => 300
             ],
             
             // main product
@@ -63,7 +65,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Traditional Indian sweet', 
                 'sku' => 'PROD_LADDU', 
                 'price' => 20.00, 
-                'quantity' => 100
+                'qty' => 100
             ]
 
 
