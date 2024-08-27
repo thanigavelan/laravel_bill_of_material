@@ -23,7 +23,15 @@ class BomResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('parent_product_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('component_product_id')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('qty')
+                    ->required()
+                    ->numeric(),
             ]);
     }
 
@@ -31,7 +39,23 @@ class BomResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('parentProduct.name')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('componentProduct.name')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('qty')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
