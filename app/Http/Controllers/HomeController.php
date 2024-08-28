@@ -13,8 +13,11 @@ class HomeController extends Controller
     //
     public function index(Request $request)
     {
+        // Fetch all finished products
+        $finishedProducts = Product::where('sku', 'like', 'PROD_%')->get();
+
         $data = [
-            'product' => Product::all()
+            'product' => $finishedProducts
         ];
 
         return view('frontend/home', $data);
@@ -24,8 +27,13 @@ class HomeController extends Controller
     {
         try {
             
+            // Fetch the product by ID along with its components
+            $product = Product::with(['components' => function ($query) {
+                $query->with('componentProduct');
+            }])->findOrFail($id);
+
             $data = [
-                'product' => Product::findOrFail($id),
+                'product' => $product,
             ];
 
             // dd($data);
